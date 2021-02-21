@@ -2,7 +2,8 @@ import pygame, random, time
 
 pygame.init()
 
-win = pygame.display.set_mode((1000, 500))
+wwidth = 2000
+win = pygame.display.set_mode((wwidth, 500))
 pygame.display.set_caption("Sorter")
 
 
@@ -21,9 +22,10 @@ class Bar:
 
 first = True
 bars = []
-for i in range(100):
-    rnd =random.randint(1, 500)
-    bars.append(Bar(i * 10, rnd, 10, 500 - rnd, 5, (i * 2.5, 200 / (i + 1), 200 - i)))
+for i in range(200):
+    rnd = random.randint(1, 500)
+    bars.append(Bar(i * 10, rnd, 10, 500 - rnd, 5, (i * .25, 200 / (i + 1), 225 - i)))
+
 
 def sort(list):
     for i in range(len(list) - 1):
